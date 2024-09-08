@@ -1,7 +1,12 @@
 * {
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
   background-color: #31466b;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #a8f0e9;
 }
 
