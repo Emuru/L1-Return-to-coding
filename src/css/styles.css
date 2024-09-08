@@ -4,3 +4,7 @@
   background-color: #31466b;
   color: #a8f0e9;
 }
+
+.hidden {
+  display: none;
+}

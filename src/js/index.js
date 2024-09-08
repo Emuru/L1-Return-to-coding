@@ -5,4 +5,19 @@
  * @version 1.0.0
  */
 
-// code here
+const inputForm = document.querySelector('#form-container')
+const greeting = document.querySelector('#greeting-container')
+
+inputForm.addEventListener('submit', (event) => {
+  event.preventDefault()
+  showGreeting()
+})
+
+function showGreeting() {
+  const name = document.querySelector('#name').value
+
+  greeting.textContent = `Hello ${name}!`
+
+  inputForm.classList.toggle('hidden')
+  greeting.classList.toggle('hidden')
+}
