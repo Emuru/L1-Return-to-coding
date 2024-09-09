@@ -9,10 +9,10 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #a8f0e9;
+  color: #000;
 }
 
-.background-image {
+#background-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -21,8 +21,6 @@ body {
   background-image: url(../img/bg-img.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
   z-index: -1;
 }
 
@@ -42,6 +40,47 @@ body {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
+#form-container,
+#greeting-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  font-size: 1.25rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  text-align: center;
+  margin: 0;
+}
+
+input {
+  width: 50%;
+  border: 0;
+  background-color: transparent;
+  border-bottom: 2px solid #eee;
+  font-size: 1.25rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.submit-button {
+  margin-left: 10px;
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  border-radius: 6px;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #e6acc1;
+}
+
 .hidden {
-  display: none;
+  display: none !important;
 }

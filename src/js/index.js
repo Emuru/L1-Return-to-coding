@@ -7,7 +7,7 @@
 
 const inputForm = document.querySelector('#form-container')
 const greeting = document.querySelector('#greeting-container')
-const backgroundImage = document.querySelector('.background-image')
+const backgroundImage = document.querySelector('#background-image')
 
 inputForm.addEventListener('submit', (event) => {
   event.preventDefault()
@@ -19,8 +19,10 @@ async function showGreeting() {
 
   greeting.textContent = `Hello ${name}!`
 
+  // Fetch image based on name
   const imageUrl = await fetchImage(name)
 
+  // Validate response and update background image
   if (imageUrl) {
     backgroundImage.style.backgroundImage = `url(${imageUrl})`
   }
