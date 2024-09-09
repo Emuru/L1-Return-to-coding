@@ -48,7 +48,7 @@ body {
   align-items: center;
   gap: 20px;
   width: 100%;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
 }
 
 h1 {
@@ -66,12 +66,17 @@ input {
   padding: 0.25rem 0.5rem;
 }
 
+input:focus {
+  border-bottom: 2px solid #e6acc1;
+  outline: none;
+}
+
 .submit-button {
   margin-left: 10px;
   font-size: 1.25rem;
   padding: 0.5rem 1rem;
   background-color: #000;
-  border-radius: 6px;
+  border-radius: 30px;
   color: #fff;
   border: 0;
   cursor: pointer;

@@ -9,11 +9,19 @@ const inputForm = document.querySelector('#form-container')
 const greeting = document.querySelector('#greeting-container')
 const backgroundImage = document.querySelector('#background-image')
 
+/**
+ * Event listener to handle form submissions.
+ */
 inputForm.addEventListener('submit', (event) => {
   event.preventDefault()
   showGreeting()
 })
 
+/**
+ * Fetches the user's name and displays a greeting.
+ * Fetches a background image based on the user's name and applies it to the background.
+ * Toggles visibility of the form and greeting elements.
+ */
 async function showGreeting() {
   const name = document.querySelector('#name').value
 
@@ -27,10 +35,17 @@ async function showGreeting() {
     backgroundImage.style.backgroundImage = `url(${imageUrl})`
   }
 
+  // Toggle visibility
   inputForm.classList.toggle('hidden')
   greeting.classList.toggle('hidden')
 }
 
+/**
+ * Fetches a random image based on the given name using the Unsplash API.
+ *
+ * @param {string} name - The name to use as query.
+ * @returns {string} The URL of the image.
+ */
 async function fetchImage(name) {
   try {
     const url = `https://api.unsplash.com/photos/random/?orientation=landscape&auto=format&query=${name}`
@@ -48,6 +63,7 @@ async function fetchImage(name) {
 
     const data = await response.json()
 
+    // Get url from response
     const imageUrl = data.urls.regular
 
     return imageUrl
