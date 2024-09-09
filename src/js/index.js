@@ -48,8 +48,8 @@ async function showGreeting() {
  */
 async function fetchImage(name) {
   try {
-    const url = `https://api.unsplash.com/photos/random/?orientation=landscape&auto=format&query=${name}`
-    const accessKey = process.env.UNSPLASH_ACCESS_KEY
+    const url = `${import.meta.env.VITE_UNSPLASH_URL}${name}`
+    const accessKey = import.meta.env.VITE_UNSPLASH_ACCESS_KEY
 
     const response = await fetch(url, {
       method: 'GET',
