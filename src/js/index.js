@@ -7,6 +7,7 @@
 
 const inputForm = document.querySelector('#form-container')
 const greeting = document.querySelector('#greeting-container')
+const backgroundImage = document.querySelector('.background-image')
 
 inputForm.addEventListener('submit', (event) => {
   event.preventDefault()
@@ -20,7 +21,9 @@ async function showGreeting() {
 
   const imageUrl = await fetchImage(name)
 
-  document.body.style.backgroundImage = `url(${imageUrl})`
+  if (imageUrl) {
+    backgroundImage.style.backgroundImage = `url(${imageUrl})`
+  }
 
   inputForm.classList.toggle('hidden')
   greeting.classList.toggle('hidden')
@@ -43,7 +46,7 @@ async function fetchImage(name) {
 
     const data = await response.json()
 
-    const imageUrl = data.urls.full
+    const imageUrl = data.urls.regular
 
     return imageUrl
   } catch (error) {
